@@ -1,0 +1,18 @@
+struct AccountInfo {
+  string username;
+  string password;
+
+  string salt;
+}
+
+struct AccountCrypto {
+  string salt;
+  string pubKey;
+}
+
+service AccountService {
+  AccountCrypto GetAccountCrypto();
+
+  void Login(Account account);
+  void Regist(Account account);
+}
