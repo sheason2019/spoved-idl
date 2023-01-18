@@ -13,6 +13,6 @@ struct AccountCrypto {
 service AccountService {
   AccountCrypto GetAccountCrypto();
 
-  void Login(Account account);
-  void Regist(Account account);
+  void Login(AccountInfo account);
+  void Regist(AccountInfo account);
 }
