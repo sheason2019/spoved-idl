@@ -10,9 +10,13 @@ struct AccountCrypto {
   string pubKey;
 }
 
+struct LoginResponse {
+  string token;
+}
+
 service AccountService {
   AccountCrypto GetAccountCrypto();
 
-  void Login(AccountInfo account);
+  LoginResponse Login(AccountInfo account);
   void Regist(AccountInfo account);
 }
