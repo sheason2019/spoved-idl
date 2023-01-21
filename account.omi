@@ -22,12 +22,16 @@ struct GetUsernameRepeatResponse {
   boolean repeat;
 }
 
+struct GetUsernameRepeatPayload {
+  string name;
+}
+
 service AccountService {
   AccountCrypto GetAccountCrypto();
 
   LoginResponse Login(AccountInfo account);
   void Regist(AccountInfo account);
 
-  GetUsernameRepeatResponse GetUsernameRepeat();
+  GetUsernameRepeatResponse GetUsernameRepeat(GetUsernameRepeatPayload payload);
   User GetCurrentUser();
 }
