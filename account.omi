@@ -1,3 +1,7 @@
+struct User {
+  string username;
+}
+
 struct AccountInfo {
   string username;
   string password;
@@ -14,9 +18,16 @@ struct LoginResponse {
   string token;
 }
 
+struct GetUsernameRepeatResponse {
+  boolean repeat;
+}
+
 service AccountService {
   AccountCrypto GetAccountCrypto();
 
   LoginResponse Login(AccountInfo account);
   void Regist(AccountInfo account);
+
+  GetUsernameRepeatResponse GetUsernameRepeat();
+  User GetCurrentUser();
 }
