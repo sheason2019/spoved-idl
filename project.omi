@@ -13,7 +13,7 @@ struct GetProjectsResponse {
   Pagination pagination;
 }
 
-service ProjectController {
+service ProjectApi {
   GetProjectsResponse GetProjects(Pagination pagination);
   Project PostProject(Project project);
 }

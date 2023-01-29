@@ -26,7 +26,7 @@ struct GetUsernameRepeatPayload {
   string name;
 }
 
-service AccountService {
+service AccountApi {
   AccountCrypto GetAccountCrypto();
 
   LoginResponse Login(AccountInfo account);
