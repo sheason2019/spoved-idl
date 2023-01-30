@@ -6,6 +6,10 @@ struct CompileRecord {
   string version;
   int createAt;
   string operator;
+  string branch;
+
+  string output;
+  int statusCode;
 }
 
 struct GetCompileRecordResponse {
