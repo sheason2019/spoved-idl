@@ -26,6 +26,10 @@ struct GetUsernameRepeatPayload {
   string name;
 }
 
+struct GetSshPubKeyResponse {
+  string pubKey;
+}
+
 service AccountApi {
   AccountCrypto GetAccountCrypto();
 
@@ -34,4 +38,6 @@ service AccountApi {
 
   GetUsernameRepeatResponse GetUsernameRepeat(GetUsernameRepeatPayload payload);
   User GetCurrentUser();
+
+  GetSshPubKeyResponse GetSshPubKey();
 }
