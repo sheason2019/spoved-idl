@@ -14,12 +14,17 @@ struct CompileRecord {
   int statusCode;
 }
 
-struct GetCompileRecordResponse {
+struct GetCompileRecordsPayload {
+  int projectId;
   Pagination pagination;
-  CompileRecord records;
+}
+
+struct GetCompileRecordsResponse {
+  repeated CompileRecord records;
+  Pagination pagination;
 }
 
 service CompileApi {
   CompileRecord PostCompile(CompileRecord payload);
-  GetCompileRecordResponse GetCompileRecords(Pagination pagination);
+  GetCompileRecordsResponse GetCompileRecords(GetCompileRecordsPayload payload);
 }
