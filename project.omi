@@ -1,0 +1,25 @@
+import { Pagination } from "./common.omi";
+
+struct Project {
+  int id;
+  string owner;
+  string projectName;
+  string gitUrl;
+  string describe;
+}
+
+struct GetProjectsResponse {
+  repeated Project projects;
+  Pagination pagination;
+}
+
+struct GetProjectPayload {
+  string username;
+  string projectName;
+}
+
+service ProjectApi {
+  GetProjectsResponse GetProjects(Pagination pagination);
+  Project PostProject(Project project);
+  Project GetProject(GetProjectPayload payload);
+}

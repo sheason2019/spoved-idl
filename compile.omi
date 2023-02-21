@@ -1,0 +1,30 @@
+import { Pagination } from "./common.omi";
+
+struct CompileRecord {
+  int id;
+
+  int projectId;
+  string image;
+  string version;
+  int createAt;
+  string operator;
+  string branch;
+
+  string output;
+  int statusCode;
+}
+
+struct GetCompileRecordsPayload {
+  int projectId;
+  Pagination pagination;
+}
+
+struct GetCompileRecordsResponse {
+  repeated CompileRecord records;
+  Pagination pagination;
+}
+
+service CompileApi {
+  CompileRecord PostCompile(CompileRecord payload);
+  GetCompileRecordsResponse GetCompileRecords(GetCompileRecordsPayload payload);
+}

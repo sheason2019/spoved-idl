@@ -1,0 +1,5 @@
+struct Pagination {
+  int page;
+  int pageSize;
+  int itemCounts;
+}

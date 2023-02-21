@@ -1,3 +1,7 @@
+struct User {
+  string username;
+}
+
 struct AccountInfo {
   string username;
   string password;
@@ -10,9 +14,30 @@ struct AccountCrypto {
   string pubKey;
 }
 
-service AccountService {
+struct LoginResponse {
+  string token;
+}
+
+struct GetUsernameRepeatResponse {
+  boolean repeat;
+}
+
+struct GetUsernameRepeatPayload {
+  string name;
+}
+
+struct GetSshPubKeyResponse {
+  string pubKey;
+}
+
+service AccountApi {
   AccountCrypto GetAccountCrypto();
 
-  void Login(Account account);
-  void Regist(Account account);
+  LoginResponse Login(AccountInfo account);
+  void Regist(AccountInfo account);
+
+  GetUsernameRepeatResponse GetUsernameRepeat(GetUsernameRepeatPayload payload);
+  User GetCurrentUser();
+
+  GetSshPubKeyResponse GetSshPubKey();
 }
