@@ -1,30 +1,30 @@
 import { Pagination } from "./common.omi";
 
-struct CompileOrder {
+struct DeployOrder {
   int id;
 
   int projectId;
   string image;
-  string version;
+  string versoin;
   int createAt;
   string operator;
-  string branch;
+
+  int compileOrderId;
 
   int statusCode;
 }
 
-struct GetCompileOrdersPayload {
+struct GetDeployOrdersPayload {
   int projectId;
   int page;
   int pageSize;
 }
 
-struct GetCompileOrdersResponse {
-  repeated CompileOrder records;
+struct GetDeployOrdersResponse {
+  repeated DeployOrder records;
   Pagination pagination;
 }
 
-service CompileApi {
-  CompileOrder PostCompileOrder(CompileOrder payload);
+service DeployApi {
   GetCompileOrdersResponse GetCompileOrders(GetCompileOrdersPayload payload);
 }
