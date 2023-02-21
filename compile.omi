@@ -16,7 +16,8 @@ struct CompileRecord {
 
 struct GetCompileRecordsPayload {
   int projectId;
-  Pagination pagination;
+  int page;
+  int pageSize;
 }
 
 struct GetCompileRecordsResponse {
