@@ -26,5 +26,5 @@ struct GetDeployOrdersResponse {
 }
 
 service DeployApi {
-  GetCompileOrdersResponse GetCompileOrders(GetCompileOrdersPayload payload);
+  GetDeployOrdersResponse GetDeployOrders(GetCompileOrdersPayload payload);
 }
