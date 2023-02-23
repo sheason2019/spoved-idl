@@ -24,7 +24,13 @@ struct GetCompileOrdersResponse {
   Pagination pagination;
 }
 
+struct GetOptionalImagesResponse {
+  repeated string images;
+}
+
 service CompileApi {
   CompileOrder PostCompileOrder(CompileOrder payload);
   GetCompileOrdersResponse GetCompileOrders(GetCompileOrdersPayload payload);
+
+  GetOptionalImagesResponse GetOptionalImages();
 }

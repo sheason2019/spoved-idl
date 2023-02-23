@@ -25,6 +25,12 @@ struct GetDeployOrdersResponse {
   Pagination pagination;
 }
 
+struct GetOptionalImagesResponse {
+  repeated string images;
+}
+
 service DeployApi {
   GetDeployOrdersResponse GetDeployOrders(GetDeployOrdersPayload payload);
+
+  GetOptionalImagesResponse GetOptionalImages();
 }
