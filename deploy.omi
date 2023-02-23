@@ -1,15 +1,14 @@
+import { CompileOrder } from "./compile.omi";
 import { Pagination } from "./common.omi";
 
 struct DeployOrder {
   int id;
 
-  int projectId;
   string image;
-  string versoin;
   int createAt;
   string operator;
 
-  int compileOrderId;
+  CompileOrder compileOrder;
 
   int statusCode;
 }
@@ -31,6 +30,7 @@ struct GetOptionalImagesResponse {
 
 service DeployApi {
   GetDeployOrdersResponse GetDeployOrders(GetDeployOrdersPayload payload);
+  DeployOrder PostDeployOrder(DeployOrder order);
 
   GetOptionalImagesResponse GetOptionalImages();
 }
