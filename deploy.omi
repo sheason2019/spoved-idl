@@ -8,6 +8,9 @@ struct DeployOrder {
   int createAt;
   string operator;
 
+  bool miniflow;
+  bool production;
+
   CompileOrder compileOrder;
 
   int statusCode;
