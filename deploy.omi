@@ -9,11 +9,16 @@ struct DeployOrder {
   string operator;
 
   bool miniflow;
-  string miniflowHeaders;
+  repeated HeaderPair headerPairs;
 
   CompileOrder compileOrder;
 
   int statusCode;
+}
+
+struct HeaderPair {
+  string header;
+  string value;
 }
 
 struct GetDeployOrdersPayload {
