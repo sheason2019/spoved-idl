@@ -9,7 +9,6 @@ struct DeployOrder {
   string operator;
 
   bool miniflow;
-  bool production;
 
   CompileOrder compileOrder;
 
