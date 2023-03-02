@@ -9,7 +9,7 @@ struct CompileOrder {
   int createAt;
   string operator;
   string branch;
-  bool production;
+  boolean production;
 
   string env;
 
